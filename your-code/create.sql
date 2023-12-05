@@ -1,0 +1,46 @@
+CREATE DATABASE lab_mysql;
+USE lab_mysql;
+
+DROP TABLE IF EXISTS sales_persons, cars, customers, invoices;
+
+/* CREATING TABLES */
+CREATE TABLE sales_persons (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    staff_id INT,
+    staff_name VARCHAR(50) NOT NULL,
+    store VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE cars (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    VIN VARCHAR(50) NOT NULL,
+    Manufacturer VARCHAR(50) NOT NULL,
+    Model VARCHAR(50) NOT NULL,
+    Year INT NOT NULL,
+    Color VARCHAR(50)
+);
+
+CREATE TABLE Customers (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    CustomerID INT NOT NULL,
+    Name VARCHAR(100) NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Country VARCHAR(50) NOT NULL,
+    Postal VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE Invoices (
+    ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    InvoiceID INT NOT NULL,
+    Date DATE NOT NULL,
+    CarVIN VARCHAR(50) NOT NULL,
+    CustomerID INT NOT NULL,
+    SalespersonID INT NOT NULL
+);
+
+SELECT * FROM sales_persons;
+SELECT * FROM cars;
+SELECT * FROM Customers;
+SELECT * FROM Invoices;
